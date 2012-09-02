@@ -1,0 +1,5 @@
+(* OASIS_START *)
+(* DO NOT EDIT (digest: f87791dbbd9e45f4145bb4d7067d0252) *)
+Authors of aliases
+Hugo Heuzard
+(* OASIS_STOP *)
