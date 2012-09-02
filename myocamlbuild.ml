@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: ca6f708956d21aa456a85643e5649ee4) *)
+(* DO NOT EDIT (digest: 54b4b513667bb6e3d8d824fcfe64de0a) *)
 module OASISGettext = struct
 # 21 "/home/hugo/Downloads/oasis-0.3.0/src/oasis/OASISGettext.ml"
 
@@ -480,7 +480,7 @@ let package_default =
      MyOCamlbuildBase.lib_ocaml =
        [
           ("aliases", ["src"]);
-          ("ptree", ["src/ptree"]);
+          ("patriciatree", ["src/ptree"]);
           ("quadtree", ["src/quadtree"]);
           ("bitree", ["src/bitree"])
        ];

@@ -11,7 +11,7 @@ Library aliases
   Path:       src
   Modules:    Common
 
-Library ptree
+Library patriciatree
   Path:       src/ptree
   Modules:    Radix, Ptree
   FindlibParent: aliases

@@ -1,8 +1,8 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 1382c0ec9aa1335cd695f4c9838b960c) *)
+(* DO NOT EDIT (digest: 53d8bf0a8b7caa57474faf0ce6a7e16a) *)
 This is the README file for the aliases distribution.
 
-Data structure to deal with in memory indexes
+In memory indexes
 
 See the files INSTALL.txt for building and installation instructions. 
 

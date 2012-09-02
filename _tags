@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 8b45e5468f14860301e2c08bded9a2c4)
+# DO NOT EDIT (digest: 6535117a4c3899884fd9eb0ebac63bc8)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -15,8 +15,8 @@
 "_darcs": not_hygienic
 # Library aliases
 "src/aliases.cmxs": use_aliases
-# Library ptree
-"src/ptree/ptree.cmxs": use_ptree
+# Library patriciatree
+"src/ptree/patriciatree.cmxs": use_patriciatree
 # Library quadtree
 "src/quadtree/quadtree.cmxs": use_quadtree
 # Library bitree
