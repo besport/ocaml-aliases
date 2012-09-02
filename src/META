@@ -1,0 +1,40 @@
+# OASIS_START
+# DO NOT EDIT (digest: 9c8e462fa9b7b494788fc4884604b23b)
+version = "0.0.2"
+description = "Data structure to deal with in memory indexes"
+archive(byte) = "aliases.cma"
+archive(byte, plugin) = "aliases.cma"
+archive(native) = "aliases.cmxa"
+archive(native, plugin) = "aliases.cmxs"
+exists_if = "aliases.cma"
+package "quadtree" (
+ version = "0.0.2"
+ description = "Data structure to deal with in memory indexes"
+ archive(byte) = "quadtree.cma"
+ archive(byte, plugin) = "quadtree.cma"
+ archive(native) = "quadtree.cmxa"
+ archive(native, plugin) = "quadtree.cmxs"
+ exists_if = "quadtree.cma"
+)
+
+package "ptree" (
+ version = "0.0.2"
+ description = "Data structure to deal with in memory indexes"
+ archive(byte) = "ptree.cma"
+ archive(byte, plugin) = "ptree.cma"
+ archive(native) = "ptree.cmxa"
+ archive(native, plugin) = "ptree.cmxs"
+ exists_if = "ptree.cma"
+)
+
+package "bitree" (
+ version = "0.0.2"
+ description = "Data structure to deal with in memory indexes"
+ archive(byte) = "bitree.cma"
+ archive(byte, plugin) = "bitree.cma"
+ archive(native) = "bitree.cmxa"
+ archive(native, plugin) = "bitree.cmxs"
+ exists_if = "bitree.cma"
+)
+# OASIS_STOP
+

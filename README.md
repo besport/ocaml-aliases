@@ -2,6 +2,7 @@ Ocaml-aliases
 ==========
  * quadtree
  * patriciatree
+ * bitree
 
 Ocaml-aliases is part of the Be Sport codebased and is released under the LGPL.
 
