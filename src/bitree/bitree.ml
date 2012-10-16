@@ -61,18 +61,18 @@ let fold t d1 d2 f acc =
   and loop b1 b2 acc nxt t = match t with
     | C (_,l) ->
       let rec aux acc = function
-	| [] -> next acc nxt
-	| (d,e)::xs ->
-	  let acc,stop = if b1 < d && d < b2 then f acc e else acc,false in
-	  if stop then acc else aux acc xs
+	      | [] -> next acc nxt
+	      | (d,e)::xs ->
+	        let acc,stop = if b1 < d && d < b2 then f acc e else acc,false in
+	        if stop then acc else aux acc xs
       in aux acc l
     | N(t1,t2)->
       let b3 = average d1 d2 in
       match d1 > b3 || d2 < b1, d1 > b2 || d2 < b3 with
-	| false, false -> loop b1 b3 acc ((b3,b2,t2)::nxt) t1
-	| false, _ -> loop b1 b3 acc nxt t1
-	| _, false -> loop b3 b2 acc nxt t2
-	| true,true -> next acc nxt
+	      | false, false -> loop b1 b3 acc ((b3,b2,t2)::nxt) t1
+	      | false, _ -> loop b1 b3 acc nxt t1
+	      | _, false -> loop b3 b2 acc nxt t2
+	      | true,true -> next acc nxt
   in
   let b1,b2 = t.bound in
   loop b1 b2 acc [] !(t.tree)
