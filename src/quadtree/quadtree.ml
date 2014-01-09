@@ -1,5 +1,5 @@
 (*
- * This file is part of Ocaml-quadtree.
+ * This file is part of Ocaml-aliases.
  *
  * Ocaml-quadtree is free software: you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -11,9 +11,9 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with Ocaml-quadtree. If not, see <http://www.gnu.org/licenses/>.
+ * License along with Ocaml-aliases. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright 2012 Be Sport Inc 580 Howard St San Francisco CA USA
+ * Copyright 2012 Be Sport
  *)
 
 type instr =

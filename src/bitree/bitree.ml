@@ -1,3 +1,21 @@
+(*
+ * This file is part of Ocaml-aliases.
+ *
+ * Ocaml-quadtree is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation.
+ *
+ * Ocaml-quadtree is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with Ocaml-aliases. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Copyright 2012 Be Sport
+ *)
+
 type 'a tree = N of 'a tree * 'a tree | C of int * ((int*'a) list)
 
 type 'a t = {
@@ -28,9 +46,9 @@ let insert tt d e =
       let d3 = average d1 d2 in
       let l1,l2 = List.partition (fun (d,_) -> d < d3) l in
       let l1,l2 =
-	if d < d3
-	then (cons l1),l2
-	else l1,(cons l2) in
+	      if d < d3
+	      then (cons l1),l2
+	      else l1,(cons l2) in
       N ((C (List.length l1,l1)),(C (List.length l2,l2)))
     | N(t1,t2) ->
       let d3 = average d1 d2 in

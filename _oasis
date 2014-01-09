@@ -1,15 +1,25 @@
-OASISFormat: 0.3
+OASISFormat: 0.4
 Name:        aliases
-Version:     0.0.2
+Version:     0.0.5
 Synopsis:    In memory indexes
+Description:
+  Implemtation of some data structure for :
+  .
+  - temporal index : bitree
+  .
+  - geographic index : quadtree
+  .
+  - string autocomplete : ptree, radix
 Authors:     Hugo Heuzard
+Maintainers: Hugo Heuzard <hugo.heuzard@gmail.com>
+Homepage:    https://github.com/besport/ocaml-aliases
 License:     MIT
 BuildTools: ocamlbuild
-Plugins:     META (0.3), StdFiles (0.3)
+Plugins:     META (0.4), StdFiles (0.4)
 
 Library aliases
   Path:       src
-  InternalModules:    Common
+  InternalModules: Fake
 
 Library patriciatree
   Path:       src/ptree
@@ -26,3 +36,9 @@ Library bitree
   Modules:    Bitree
   FindlibParent: aliases
 
+Document api
+ Title:                API reference for Aliases
+ Type:                 OCamlbuild (0.4)
+ BuildTools+:          ocamldoc
+ XOCamlbuildPath:      src/
+ XOCamlbuildLibraries: aliases.bitree,aliases.quadtree,aliases.patriciatree

@@ -1,15 +1,15 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 26fca6d59f22c83a38e9a08207ef7ad0) *)
+(* DO NOT EDIT (digest: 4e5b8dc68dc5f204be8feb03e96b37d9) *)
 This is the INSTALL file for the aliases distribution.
 
 This package uses OASIS to generate its build system. See section OASIS for
-full information. 
+full information.
 
 Dependencies
 ============
 
 In order to compile this package, you will need:
-* ocaml
+* ocaml for all, doc api
 * findlib
 
 Installing
@@ -23,7 +23,7 @@ Installing
 Uninstalling
 ============
 
-1. Go to the root of the package 
+1. Go to the root of the package
 2. Run 'ocaml setup.ml -uninstall'
 
 OASIS

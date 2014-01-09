@@ -9,3 +9,6 @@
 *.cmxa
 setup.*
 _build
+*.mllib
+*.odocl
+*docdir

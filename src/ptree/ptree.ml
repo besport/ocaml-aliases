@@ -1,39 +1,34 @@
-(* 
- * This file is part of ocaml-ptree.
+(*
+ * This file is part of Ocaml-aliases.
  *
- * OCaml-ptree is free software: you can redistribute it and/or 
- * modify it under the terms of the GNU Lesser General Public 
+ * Ocaml-quadtree is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation.
  *
- * OCaml-ptree is distributed in the hope that it will be useful,
+ * Ocaml-quadtree is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public 
- * License along with ocaml-ptree. If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with Ocaml-aliases. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright 2012 Be Sport Inc 580 Howard St San Francisco CA USA
+ * Copyright 2012 Be Sport
  *)
 
 type 'a t = 'a Radix.t ref
 
-let create () = ref (Radix.create ())
+let create () = ref Radix.empty
 
-let fold prefix f acc ptree = fst(Radix.lookup !ptree prefix f acc)
+let clear r = r:=Radix.empty
 
-let fold_with_max ~max prefix f acc ptree =
-  let g (acc,n) v = match n with
-    | i when i <= 0 -> (acc,0),true
-    | 1 -> ((f acc v),0),true
-    | n -> ((f acc v),n-1),false in
-  let (res,_) = fold prefix g (acc,max) ptree in
-  res
+let fold ptree prefix f acc = Radix.fold !ptree prefix f acc
 
-(* insert does not behave properly when inserting several time the same object *)
+let fold_with_max ptree ~max prefix f acc =
+  Radix.fold_with_max !ptree ~max prefix f acc
+
 let insert ptree label value =
   ptree := Radix.bind (!ptree) label value
 
 let rec remove ptree label value =
   ptree := Radix.remove (!ptree) label value
-

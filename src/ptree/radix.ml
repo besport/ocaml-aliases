@@ -1,19 +1,19 @@
-(* 
- * This file is part of ocaml-ptree.
+(*
+ * This file is part of Ocaml-aliases.
  *
- * OCaml-ptree is free software: you can redistribute it and/or 
- * modify it under the terms of the GNU Lesser General Public 
+ * Ocaml-quadtree is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation.
  *
- * OCaml-ptree is distributed in the hope that it will be useful,
+ * Ocaml-quadtree is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public 
- * License along with ocaml-ptree. If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with Ocaml-aliases. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright 2012 Be Sport Inc 580 Howard St San Francisco CA USA
+ * Copyright 2012 Be Sport
  *)
 
 (* mostly inspired by https://github.com/khigia/ocaml-stringset *)
@@ -59,7 +59,9 @@ type 'a _n_t = (* node: Leaf, Trunk (for prefix inputs), Branch *)
 
 type 'a t = 'a _n_t option
 
-let create () = None
+let empty = None
+
+let is_empty = function None -> true | _ -> false
 
 let merge (v:'a) (l:'a list) : 'a list =
   if List.mem v l
@@ -183,10 +185,17 @@ let rec _lookup j t s sl f acc =
 	  | Sup p when p = i -> _lookup i r s sl f acc
 	  | _ -> acc, false)
 
-let lookup radix s f acc =
+let fold radix s f acc =
   match radix with
     | None -> acc,false
     | Some t ->
         let sl = String.length s in
         _lookup 0 t s sl f acc
 
+let fold_with_max radix ~max s f acc =
+  let g (acc,n) v = match n with
+    | i when i <= 0 -> (acc,0),true
+    | 1 -> ((f acc v),0),true
+    | n -> ((f acc v),n-1),false in
+  let ((res,_),_) = fold radix s g (acc,max) in
+  res
