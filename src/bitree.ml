@@ -61,7 +61,7 @@ let insert tt d e =
 
 let remove tt d e =
   let rec loop d1 d2 t = match t with
-    | C (size,l) -> let l = List.filter ((<>) (d,e)) l in
+    | C (_,l) -> let l = List.filter ((<>) (d,e)) l in
 		    C (List.length l,l)
     | N(t1,t2) ->
       let d3 = average d1 d2 in

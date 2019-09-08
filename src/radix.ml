@@ -172,7 +172,7 @@ let rec _lookup j t s sl f acc =
 	  | Contain -> _lookup kl m s sl f acc
 	  | _ -> acc,false
 	)
-    | B(l, r, i, b, k) ->
+    | B(l, r, i, _, k) ->
 	(match string_cmp_i s j sl k j (i+1) with
 	  | Eq | Contain -> _lookup i l s sl f acc
 	  | Prefix ->

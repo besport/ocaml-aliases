@@ -94,7 +94,7 @@ let insert tt (y,x) e =
     | C (_,l) ->
 	let lon3 = (lon1+.lon2) /. 2. in
 	let lat3 = (lat1+.lat2) /. 2. in
-	let l1,l2,l3,l4 = List.fold_left (fun (l1,l2,l3,l4) (((y,x),e) as elt) ->
+	let l1,l2,l3,l4 = List.fold_left (fun (l1,l2,l3,l4) (((y,x), _) as elt) ->
 	  match x < lon3, y < lat3 with
 	    | true,true -> elt::l1,l2,l3,l4
 	    | true,false -> l1,elt::l2,l3,l4
@@ -127,7 +127,7 @@ let insert_tailrec tt (y,x) e =
     | C (_,l) ->
 	let lon3 = (lon1+.lon2) /. 2. in
 	let lat3 = (lat1+.lat2) /. 2. in
-	let l1,l2,l3,l4 = List.fold_left (fun (l1,l2,l3,l4) (((y,x),e) as elt) ->
+	let l1,l2,l3,l4 = List.fold_left (fun (l1,l2,l3,l4) (((y,x),_) as elt) ->
 	  match x < lon3, y < lat3 with
 	    | true,true -> elt::l1,l2,l3,l4
 	    | true,false -> l1,elt::l2,l3,l4

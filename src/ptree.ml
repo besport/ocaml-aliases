@@ -30,5 +30,5 @@ let fold_with_max ptree ~max prefix f acc =
 let insert ptree label value =
   ptree := Radix.bind (!ptree) label value
 
-let rec remove ptree label value =
+let remove ptree label value =
   ptree := Radix.remove (!ptree) label value
