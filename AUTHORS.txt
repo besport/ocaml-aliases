@@ -1,8 +1,0 @@
-(* OASIS_START *)
-(* DO NOT EDIT (digest: d7402be1f65c38974772ff4d4f1352e3) *)
-Authors of aliases
-Hugo Heuzard
-
-Current maintainers of aliases
-Hugo Heuzard <hugo.heuzard@gmail.com>
-(* OASIS_STOP *)

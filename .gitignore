@@ -12,3 +12,5 @@ _build
 *.mllib
 *.odocl
 *docdir
+*.merlin
+*.install
